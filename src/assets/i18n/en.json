@@ -1,6 +1,13 @@
 {
     "title": "Product Management",
     "header": {
-        "login": "Login"
+        "login": "login"
+    },
+    "home": {
+        "welcome": "welcome"
+    },
+    "product_card": {
+        "to_check" : "to check",
+        "check": "check"
     }
 }

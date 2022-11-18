@@ -2,5 +2,12 @@
     "title": "Gestor de productos",
     "header": {
         "login": "Iniciar sesión"
+    },
+    "home": {
+        "welcome": "Bienvenido"
+    },
+    "product_card": {
+        "to_check" : "por revisar",
+        "check": "revisar"
     }
 }

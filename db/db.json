@@ -1,12 +1,32 @@
 {
-    "products": [
+    "category": [
         {
             "id": 1,
-            "name": "Producto 1",
-            "price": 0.1,
-            "format": "black",
-            "mark": "Lorem",
-            "checked": false
+            "name": "Tornillos",
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Tornillo 1",
+                    "price": 0.1,
+                    "format": "black",
+                    "mark": "Lorem",
+                    "checked": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Tuercas",
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Tuerca 1",
+                    "price": 0.1,
+                    "format": "grey",
+                    "mark": "Lorem",
+                    "checked": false
+                }
+            ]
         }
     ]
 }

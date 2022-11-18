@@ -10,11 +10,13 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './shared/material/material.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { SharedModule } from './shared/shared.module';
         }
     }),
     BrowserAnimationsModule,
-    SharedModule
+    MaterialModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
