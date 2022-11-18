@@ -1,4 +1,4 @@
-<h1>Parte 1 - spanCuestionario</h1>
+<h1>Parte 1 - Cuestionario</h1>
 <div>
   <h3>1. ¿Qué son los hooks del ciclo de vida en Angular? Explique algunos hooks
     del ciclo de vida</h3>
@@ -80,9 +80,11 @@
   <hr>
   
   <h3>3. ¿En qué se diferencian los Observables de las Promesas?</h3>
-  <p>Una promesa puede manejar únicamente un evento asíncrono hasta que se completa o falla.</p>
-  <p>Un observable es un flujo de datos que puede manejar cero o más eventos donde se invoca un callback para cada uno
-    de ellos.</p>
+  <ul>
+    <li>Una promesa puede manejar únicamente un evento asíncrono hasta que se completa o falla.</li>
+    <li>Un observable es un flujo de datos que puede manejar cero o más eventos donde se invoca un callback para cada uno
+    de ellos.</li>
+  </ul>
   <p>La diferencia entre ambos radica en que un observable tiene las propiedades de una promesa y mucho más. Ya que al
     poder manejar más de un único evento y dispone de la posibilidad de cancelar la subscripción.</p>
   
