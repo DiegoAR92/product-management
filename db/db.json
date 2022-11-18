@@ -1,0 +1,12 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Producto 1",
+            "price": 0.1,
+            "format": "black",
+            "mark": "Lorem",
+            "checked": false
+        }
+    ]
+}
