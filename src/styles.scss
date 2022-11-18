@@ -3,3 +3,8 @@
 @import 'tailwindcss/utilities';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --primary-color: #007A3E;
+    --second-color: #FFAE3B;
+}
