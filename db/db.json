@@ -1,33 +1,148 @@
 {
   "category": [{
-      "id": 1,
-      "name": "Tornillos",
-      "products": [{
-        "id": 1,
-        "name": "Tornillo 1",
-        "price": 0.1,
-        "format": "black",
-        "mark": "Lorem",
-        "checked": false
-      }]
-    },
-    {
-      "id": 2,
-      "name": "Tuercas",
-      "products": [{
-        "id": 1,
-        "name": "Tuerca 1",
-        "price": 0.1,
-        "format": "grey",
-        "mark": "Lorem",
-        "checked": false
-      }]
-    }
-  ],
+    "id": 1,
+    "name": "Tornillos"
+  }],
   "users": [{
     "id": 1,
     "email": "test@test.com",
     "user": "Usuario123",
     "password": "12345"
-  }]
+  }],
+  "products": [{
+      "id": 1,
+      "category_id": "1",
+      "name": "Tornillo de tuerca",
+      "price": 0.1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 2,
+      "category_id": "1",
+      "name": "Tornillo 2",
+      "price": 0.2,
+      "format": "white",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 3,
+      "category_id": "1",
+      "name": "Tornillo 3",
+      "price": 0.3,
+      "format": "blue",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 4,
+      "category_id": "1",
+      "name": "Tornillo 4",
+      "price": 0.1,
+      "format": "yellow",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 5,
+      "category_id": "1",
+      "name": "Tornillo 5",
+      "price": 0.5,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 6,
+      "category_id": "1",
+      "name": "Tornillo 6",
+      "price": 0.6,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 7,
+      "category_id": "1",
+      "name": "Tornillo 7",
+      "price": 0.7,
+      "format": "grey",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 8,
+      "category_id": "1",
+      "name": "Tornillo 8",
+      "price": 0.8,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 9,
+      "category_id": "1",
+      "name": "Tornillo 9",
+      "price": 0.9,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 10,
+      "category_id": "1",
+      "name": "Tornillo 10",
+      "price": 1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 11,
+      "category_id": "1",
+      "name": "Tornillo 11",
+      "price": 1.1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 12,
+      "category_id": "1",
+      "name": "Tornillo 12",
+      "price": 1.2,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 13,
+      "category_id": "1",
+      "name": "Tornillo 13",
+      "price": 0.1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 14,
+      "category_id": "1",
+      "name": "Tornillo 14",
+      "price": 0.1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    },
+    {
+      "id": 15,
+      "category_id": "1",
+      "name": "Tornillo 15",
+      "price": 0.1,
+      "format": "black",
+      "mark": "Lorem",
+      "checked": false
+    }
+  ]
 }
