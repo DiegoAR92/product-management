@@ -15,13 +15,15 @@ import { PagesModule } from './pages/pages.module';
 import { ErrorPageComponent } from './shared/components/error-page/error-page.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { LoadingInterceptor } from './shared/interceptors/loading/loading.interceptor';
+import { ConfirmationDialogComponent } from './shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ErrorPageComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,

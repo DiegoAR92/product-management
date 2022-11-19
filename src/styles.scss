@@ -8,3 +8,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --primary-color: #007A3E;
     --second-color: #FFAE3B;
 }
+
+.custom-confirmation-dialog-container .mat-dialog-container {
+    border-top: 5px solid #AA2223;
+
+    .delete-btn{
+        color: white;
+        background-color: #AA2223;
+    }
+
+}

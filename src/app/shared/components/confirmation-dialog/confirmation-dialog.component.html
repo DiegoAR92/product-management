@@ -1,0 +1,8 @@
+<div class="dialog-container">
+    <h4 class="mb-0">{{ data.title }}</h4>
+    <h3 class="font-bold">{{ data.message }}</h3>
+    <div class="flex justify-end mt-5">
+        <button mat-raised-button [ngClass]="data.classBtnLeft"  mat-dialog-close> {{ data.textBtnLeft }} </button>
+        <button mat-raised-button [ngClass]="data.classBtnRigth" class="ml-2" (click)="accept()"> {{ data.textBtnRigth }} </button>
+    </div>
+</div>

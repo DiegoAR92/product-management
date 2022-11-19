@@ -26,6 +26,14 @@
                 "mark" : "Marca",
                 "actions": "Acciones"
             }
+        },
+        "dialog":{
+            "delete":{
+                "title": "Confirmación",
+                "message": "¿Desea eliminar el elemento seleccionado?",
+                "btn_left": "Cancelar",
+                "btn_rigth": "Eliminar"
+            }
         }
     }
 }

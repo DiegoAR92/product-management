@@ -10,6 +10,7 @@ export interface Category {
 
 export interface Product {
     id:      number;
+    categoryId:      number;
     name:    string;
     price:   number;
     format:  string;

@@ -5,6 +5,9 @@ import { Subject, Observable, startWith, switchMap, catchError, of, Subscription
 import { Category, Product } from '../../../interfaces/product.interface';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../../shared/components/confirmation-dialog/confirmation-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-products',
@@ -36,7 +39,11 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
     }
   }
 
-  constructor(private productSrv: ProductsService, private route: ActivatedRoute) { }
+  constructor(
+    private productSrv: ProductsService, 
+    private route: ActivatedRoute,
+    public dialog: MatDialog,
+    private translate: TranslateService) { }
   
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -80,5 +87,28 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
       ).subscribe(resp => {
         this.products = resp;
       }));
+  }
+
+  openDeletedDialog(product: Product){
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    panelClass: 'custom-confirmation-dialog-container',
+    width: '40vw',
+    height: '20vh',
+    hasBackdrop: false,
+    data: {
+      title: this.translate.instant('products.dialog.delete.title'),
+      message: this.translate.instant('products.dialog.delete.message'),
+      textBtnLeft: this.translate.instant('products.dialog.delete.btn_left'),
+      textBtnRigth: this.translate.instant('products.dialog.delete.btn_rigth'),
+      classBtnLeft: '',
+      classBtnRigth: 'delete-btn',
+    }
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.productSrv.deleteProduct(product.id.toString()).subscribe();
+        this.#reload();
+      }
+    })
   }
 }

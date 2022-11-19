@@ -26,6 +26,14 @@
                 "mark" : "Mark",
                 "actions": "Actions"
             }
+        },
+        "dialog":{
+            "delete":{
+                "title": "Confirmation",
+                "message": "Do you want to delete the selected item?",
+                "btn_left": "Cancel",
+                "btn_rigth": "Delete"
+            }
         }
     }
 }
