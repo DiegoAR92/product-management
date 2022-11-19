@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/shared/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products/products.service';
 import { Observable } from 'rxjs';
 import { Product, Category } from '../../interfaces/product.interface';
 
@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
     this.productSvc.getCategories()?.subscribe(
      resp => {
       if(resp){
+        console.log(resp);
+        
         this.categories = resp;
       }
      }
