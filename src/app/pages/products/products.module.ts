@@ -4,6 +4,7 @@ import { MaterialModule } from '../../shared/material/material.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { Routes, RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ListProductsComponent
+    ListProductsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

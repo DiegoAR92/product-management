@@ -23,7 +23,7 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
 
   id!: string;
   page: number = 1;
-  limit: number = 5
+  limit: number = 5;
   products: Product[] = [];
   displayedColumns: string[] = ['name','price','format','mark', 'actions'];
 

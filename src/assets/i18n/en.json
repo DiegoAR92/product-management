@@ -18,6 +18,7 @@
         }
     },
     "products": {
+        "add_product": "Add product",
         "list": {
             "table": {
                 "name": "Name",
