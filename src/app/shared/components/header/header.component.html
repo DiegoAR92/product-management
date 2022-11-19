@@ -1,5 +1,15 @@
 <div class="flex justify-between w-100 p-5 b-color">
-    <img src="../../../../assets/img/mercadona-logo.png" alt="logo" routerLink="/">
-    <button mat-raised-button class="login-btn" (click)="login()" *ngIf="!auth">{{ 'header.login' | translate }}</button>
-    <button mat-raised-button (click)="logout()" *ngIf="auth">{{ auth.user }} <mat-icon>logout</mat-icon> </button>
+  <img src="../../../../assets/img/mercadona-logo.png" alt="logo" routerLink="/">
+  <div class="flex items-center">
+    <div class="mr-5">
+      <button mat-button (click)="changeLang('es')"> ES </button>
+      |
+      <button mat-button (click)="changeLang('en')"> EN </button>
+    </div>
+    <div>
+      <button mat-raised-button class="login-btn" (click)="login()"
+        *ngIf="!auth">{{ 'header.login' | translate }}</button>
+      <button mat-raised-button (click)="logout()" *ngIf="auth">{{ auth.user }} <mat-icon>logout</mat-icon> </button>
+    </div>
+  </div>
 </div>
