@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { UserGuard } from './shared/utils/user.guard';
+import { ErrorPageComponent } from './shared/components/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
     canActivate: [UserGuard],
     canLoad: [UserGuard]
   },
+  {
+    path: 'error/:error',
+    component: ErrorPageComponent
+  }
 ];
 
 @NgModule({

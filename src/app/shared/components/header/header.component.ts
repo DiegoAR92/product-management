@@ -14,7 +14,12 @@ export class HeaderComponent implements OnInit {
   constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.auth = this.authSvc.auth as Auth ?? undefined;
+    this.authSvc.verifyLogged().subscribe(
+      resp => {
+        if(resp){
+          this.auth = this.authSvc.auth;
+        }
+    })
   }
 
   login(){

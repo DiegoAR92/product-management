@@ -1,13 +1,20 @@
 {
     "title": "Product Management",
+    "back_home": "Back to home",
     "header": {
-        "login": "login"
+        "login": "Login"
     },
     "home": {
-        "welcome": "welcome"
+        "welcome": "Welcome"
     },
     "product_card": {
         "to_check" : "to check",
-        "check": "check"
+        "check": "Check"
+    },
+    "error": {
+        "403": {
+            "title": "You don't have access",
+            "description": "To access, you need to be registered."
+        }
     }
 }

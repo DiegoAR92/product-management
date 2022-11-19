@@ -15,7 +15,6 @@ export class AppComponent{
   constructor(private translate: TranslateService, private authSrv: AuthService) {
     translate.setDefaultLang(this.lang);
     translate.use(this.lang);
-    this.authSrv.checkUser().subscribe();
   }
 
   title = 'product-management';

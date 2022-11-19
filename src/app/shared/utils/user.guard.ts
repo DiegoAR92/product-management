@@ -13,10 +13,10 @@ export class UserGuard implements CanActivate, CanLoad {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
-      return this.authService.checkUser().pipe(
+      return this.authService.verifyLogged().pipe(
         tap( result => {
           if(!result){
-            this.router.navigate(['/']);
+            this.router.navigate(['/error/403']);
           }
         } )
       );
@@ -25,10 +25,10 @@ export class UserGuard implements CanActivate, CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-      return this.authService.checkUser().pipe(
+      return this.authService.verifyLogged().pipe(
         tap( result => {
           if(!result){
-            this.router.navigate(['/']);
+            this.router.navigate(['/error/403']);
           }
         } )
       );

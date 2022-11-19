@@ -18,7 +18,7 @@ export class AuthService {
   }
   constructor(private http: HttpClient, private router: Router) { }
 
-  checkUser() : Observable<boolean>{
+  verifyLogged() : Observable<boolean>{
     if(!localStorage.getItem('token')){
       return of(false);
     }
@@ -39,7 +39,7 @@ export class AuthService {
       );
   }
 
-  logout(){
+  logout(): void{
     localStorage.removeItem('token');
     this._auth = undefined;
     this.router.navigate(['/']);

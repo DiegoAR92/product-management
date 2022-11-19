@@ -1,5 +1,6 @@
 {
     "title": "Gestor de productos",
+    "back_home": "Volver a inicio",
     "header": {
         "login": "Iniciar sesión"
     },
@@ -8,6 +9,12 @@
     },
     "product_card": {
         "to_check" : "por revisar",
-        "check": "revisar"
+        "check": "Revisar"
+    },
+    "error": {
+        "403": {
+            "title": "No tienes acceso",
+            "description": "Para poder acceder, necesitas estar registrado."
+        }
     }
 }
