@@ -4,7 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeModule } from './home/home.module';
 import { MaterialModule } from '../shared/material/material.module';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { UserGuard } from '../shared/utils/user.guard';
+import { ProductsModule } from './products/products.module';
+
+const routes: Routes = [
+  
+];
 
 @NgModule({
   declarations: [],
@@ -12,7 +18,9 @@ import { Routes } from '@angular/router';
     CommonModule,
     TranslateModule,
     MaterialModule,
-    HomeModule
+    HomeModule,
+    RouterModule.forRoot(routes),
+    ProductsModule
   ]
 })
 export class PagesModule { }

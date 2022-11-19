@@ -1,4 +1,5 @@
 <div class="flex justify-between w-100 p-5 b-color">
-    <img src="../../../../assets/img/mercadona-logo.png" alt="logo">
-    <button mat-raised-button class="login-btn">{{ 'header.login' | translate }}</button>
+    <img src="../../../../assets/img/mercadona-logo.png" alt="logo" routerLink="/">
+    <button mat-raised-button class="login-btn" (click)="login()" *ngIf="!auth">{{ 'header.login' | translate }}</button>
+    <button mat-raised-button (click)="logout()" *ngIf="auth">{{ auth.user }} <mat-icon>logout</mat-icon> </button>
 </div>

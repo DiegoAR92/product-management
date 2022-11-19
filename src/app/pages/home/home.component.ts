@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { Observable } from 'rxjs';
-import { Product, Category } from '../../interfaces/product';
+import { Product, Category } from '../../interfaces/product.interface';
 
 @Component({
   selector: 'app-home',
