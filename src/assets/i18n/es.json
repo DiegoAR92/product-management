@@ -16,5 +16,16 @@
             "title": "No tienes acceso",
             "description": "Para poder acceder, necesitas estar registrado."
         }
+    },
+    "products": {
+        "list": {
+            "table": {
+                "name": "Nombre",
+                "price" : "Precio",
+                "format" : "Formato",
+                "mark" : "Marca",
+                "actions": "Acciones"
+            }
+        }
     }
 }

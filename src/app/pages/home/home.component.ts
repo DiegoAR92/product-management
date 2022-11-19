@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/services/products/products.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Product, Category } from '../../interfaces/product.interface';
 
 @Component({
@@ -19,13 +19,16 @@ export class HomeComponent implements OnInit {
 
   #loadData(){
     this.productSvc.getCategories()?.subscribe(
-     resp => {
-      if(resp){
-        console.log(resp);
-        
-        this.categories = resp;
-      }
-     }
-    )
+        resp => {
+          this.categories = resp;
+          this.categories.map(c=> {
+            this.productSvc.getProductsByCategory(c.id.toString())?.subscribe(
+              product => {
+                c.amount = product.length;
+              }
+            )
+          })
+        }
+    );
   }
 }

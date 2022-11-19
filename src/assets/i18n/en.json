@@ -16,5 +16,16 @@
             "title": "You don't have access",
             "description": "To access, you need to be registered."
         }
+    },
+    "products": {
+        "list": {
+            "table": {
+                "name": "Name",
+                "price" : "Price",
+                "format" : "Format",
+                "mark" : "Mark",
+                "actions": "Actions"
+            }
+        }
     }
 }

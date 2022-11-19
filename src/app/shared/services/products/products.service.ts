@@ -13,18 +13,34 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories(numberPage: number = 0, limit: number = 5): Observable<Category[]> | undefined {
-    const params: HttpParams = new HttpParams();
-    params.append('_page', numberPage);
-    params.append('limit', limit);
-    return this.http.get<Category[]>(`${this.baseUrl}/category`, {params});
+  getCategories(): Observable<Category[]> | undefined {
+    return this.http.get<Category[]>(`${this.baseUrl}/category`);
   }
 
-  getProducts(id:number, numberPage: number = 0, limit: number = 5): Observable<Category> | undefined {
-    const params: HttpParams = new HttpParams();
-    params.append('_page', numberPage);
-    params.append('limit', limit);
-    return this.http.get<Category>(`${this.baseUrl}/category/${id}`, {params});
+  getProductsByCategory(idCategory?:string, numberPage?: number, limit?: number): Observable<Product[]> | undefined {
+    let params: HttpParams = new HttpParams();
+    if(idCategory){
+      params = params.append('category_id', idCategory);
+    }
+    
+    if(numberPage){
+      params = params.append('_page', numberPage);
+    }
+    if(limit){
+      params = params.append('_limit', limit);
+    }
+
+    return this.http.get<Product[]>(`${this.baseUrl}/products`, {params});
+  }
+
+  createProduct(product: Product){
+    return this.http.post(`${this.baseUrl}/products`, {product});
+  }
+
+  deleteProduct(idProduct: string) : void{
+    if(idProduct){
+      this.http.delete(`${this.baseUrl}/products/${idProduct}`);
+    }
   }
 
 }

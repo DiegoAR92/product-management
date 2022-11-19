@@ -1,6 +1,6 @@
 <div>
     <h1 class="welcome-txt">{{ 'home.welcome' | translate }}</h1>
     <div class="flex justify-center mb-5"  *ngFor="let category of categories">
-        <app-product-card [product]="category.name" [amountToCheck]="category.products.length" [id]="category.id"></app-product-card> 
+        <app-product-card [product]="category.name" [amountToCheck]="category.amount" [id]="category.id"></app-product-card> 
     </div>
 </div>

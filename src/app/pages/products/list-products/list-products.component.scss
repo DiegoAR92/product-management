@@ -1,0 +1,28 @@
+.products-container{
+    margin: 5rem;    
+}
+
+.table-container{
+    height: 300px;
+    max-width: 100%;
+    overflow: auto;
+    th{
+        background-color: #D6D9DF;
+    }
+}
+
+.mat-row:nth-child(even){
+    background-color: #F2F4F8;
+}
+        
+.mat-row:nth-child(odd){
+    background-color: #FFFFFF;
+}
+
+.edit-btn{
+    color: var(--primary-color);
+}
+
+.delete-btn{
+    color: red;
+}
