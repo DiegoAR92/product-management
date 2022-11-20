@@ -20,7 +20,7 @@
       <ng-container matColumnDef="actions">
         <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef> {{ 'products.list.table.actions' | translate }} </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button class="edit-btn flex-1 max-w-fit ml-3 mt-1">
+          <button mat-icon-button class="edit-btn flex-1 max-w-fit ml-3 mt-1" (click)="openProductFormDialog(element.id)">
             <mat-icon>edit</mat-icon>
           </button>
           <button mat-icon-button class="delete-btn flex-1 max-w-fit ml-3 mt-1" (click)="openDeletedDialog(element)">
@@ -34,4 +34,4 @@
   </div>
   <mat-paginator fixed [length]="products.length" [pageSizeOptions]="[5,10,25]" showFirstLastButtons></mat-paginator>
 </div>
-<app-footer></app-footer>
+<app-footer (addProduct)="openProductFormDialog()"></app-footer>

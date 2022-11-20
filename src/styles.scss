@@ -1,20 +1,38 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-html, body { height: 100%;  }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 :root {
-    --primary-color: #007A3E;
-    --second-color: #FFAE3B;
+  --primary-color: #007A3E;
+  --second-color: #FFAE3B;
 }
 
 .custom-confirmation-dialog-container .mat-dialog-container {
-    border-top: 5px solid #AA2223;
+  border-top: 5px solid #AA2223;
 
-    .delete-btn{
-        color: white;
-        background-color: #AA2223;
-    }
+  .delete-btn {
+    color: white;
+    background-color: #AA2223;
+  }
 
+}
+
+.btn-grey {
+  color: white;
+  background-color: grey;
+}
+
+.btn-green {
+  color: white;
+  background-color: var(--primary-color);
 }

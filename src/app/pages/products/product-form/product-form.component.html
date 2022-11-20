@@ -1,0 +1,53 @@
+<div class="p-5">
+    <h2 *ngIf="!id">{{ 'products.new_product' | translate }}</h2>
+    <h2 *ngIf="id">{{ 'products.update_product' | translate }}</h2>
+    <form [formGroup]="productForm!" (submit)="$event.preventDefault()" (keydown.enter)="$event.preventDefault()">
+    <div class="m-5">
+      <div class="flex flex-row">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="name" required maxlength="50" />
+          <small class="pl-2 color-grey" matSuffix>{{ nameControl.value.length }}/50</small>
+          <mat-error *ngIf="nameControl.errors?.['required']">{{ 'forms.errors.required' | translate }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="flex flex-row mt-1 flex-wrap w-full">
+        <div class="pr-2 w-6/12">
+          <button mat-icon-button (click)="priceChange(0.1)">
+            <mat-icon>add</mat-icon>
+          </button>
+          <mat-form-field class="w-8/12" appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input class="text-center" matInput type="number" formControlName="price" maxlength="50" />
+          </mat-form-field>
+          <button mat-icon-button (click)="priceChange(-0.1)">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+        <mat-form-field class="w-6/12" appearance="outline">
+          <mat-label>Formato</mat-label>
+          <mat-select formControlName="format" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let format of formats" [value]="format">
+              {{format}}
+            </mat-option>
+          </mat-select>
+          <small class="pl-2 color-grey" matSuffix>{{ formatControl.value.length }}/50</small>
+          <mat-error *ngIf="formatControl.errors?.['required']">{{ 'forms.errors.required' | translate }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="flex flex-row">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Marca</mat-label>
+          <input matInput type="text" formControlName="mark" required maxlength="50" />
+          <small class="pl-2 color-grey" matSuffix>{{ markControl.value.length }}/50</small>
+          <mat-error *ngIf="markControl.errors?.['required']">{{ 'forms.errors.required' | translate }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <button mat-raised-button class="btn-grey" mat-dialog-close>{{ 'products.cancel' | translate }}</button>
+      <button mat-raised-button class="btn-green" (click)="save()">{{ id ? ('products.update' | translate) : ('products.save' | translate) }}</button>
+    </div>
+  </form>
+</div>

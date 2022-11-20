@@ -19,6 +19,11 @@
     },
     "products": {
         "add_product": "Añadir producto",
+        "new_product": "Nuevo producto",
+        "update_product": "Actualizar producto",
+        "save": "Guardar",
+        "update": "Actualizar",
+        "cancel": "Cancelar",
         "list": {
             "table": {
                 "name": "Nombre",
@@ -36,5 +41,10 @@
                 "btn_rigth": "Eliminar"
             }
         }
+    },
+    "forms":{
+        "errors": {
+            "required": "El campo es obligatorio"
+        } 
     }
 }

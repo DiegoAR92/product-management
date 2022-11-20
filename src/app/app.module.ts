@@ -38,7 +38,7 @@ import { ConfirmationDialogComponent } from './shared/components/confirmation-di
     }),
     BrowserAnimationsModule,
     MaterialModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [
     {

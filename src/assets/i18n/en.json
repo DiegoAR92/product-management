@@ -19,6 +19,11 @@
     },
     "products": {
         "add_product": "Add product",
+        "new_product": "New product",
+        "update_product": "Update product",
+        "save": "Save",
+        "update": "Update",
+        "cancel": "Cancel",
         "list": {
             "table": {
                 "name": "Name",
@@ -34,7 +39,15 @@
                 "message": "Do you want to delete the selected item?",
                 "btn_left": "Cancel",
                 "btn_rigth": "Delete"
+            },
+            "add": {
+                
             }
         }
+    },
+    "forms":{
+        "errors": {
+            "required": "The field is required"
+        } 
     }
 }

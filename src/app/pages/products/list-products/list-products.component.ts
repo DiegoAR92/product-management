@@ -8,6 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../shared/components/confirmation-dialog/confirmation-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
+import { ProductFormComponent } from '../product-form/product-form.component';
 
 @Component({
   selector: 'app-list-products',
@@ -111,4 +112,18 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
       }
     })
   }
+
+  openProductFormDialog(idProduct? :string){
+    const dialogRef = this.dialog.open(ProductFormComponent, {
+      width: '80vw',
+      height: '50vh',
+      data: idProduct ? {id:idProduct} : undefined
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.#reload();
+      }
+    })
+  }
+
 }

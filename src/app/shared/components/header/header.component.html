@@ -7,7 +7,7 @@
       <button mat-button (click)="changeLang('en')"> EN </button>
     </div>
     <div>
-      <button mat-raised-button class="login-btn" (click)="login()"
+      <button mat-raised-button class="btn-grey" (click)="login()"
         *ngIf="!auth">{{ 'header.login' | translate }}</button>
       <button mat-raised-button (click)="logout()" *ngIf="auth">{{ auth.user }} <mat-icon>logout</mat-icon> </button>
     </div>
