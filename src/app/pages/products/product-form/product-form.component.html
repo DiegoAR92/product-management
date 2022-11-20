@@ -5,7 +5,7 @@
     <div class="m-5">
       <div class="flex flex-row">
         <mat-form-field class="w-full" appearance="outline">
-          <mat-label>Nombre</mat-label>
+          <mat-label>{{ 'products.list.table.name' | translate }}</mat-label>
           <input matInput type="text" formControlName="name" required maxlength="50" />
           <small class="pl-2 color-grey" matSuffix>{{ nameControl.value.length }}/50</small>
           <mat-error *ngIf="nameControl.errors?.['required']">{{ 'forms.errors.required' | translate }}</mat-error>
@@ -17,7 +17,7 @@
             <mat-icon>add</mat-icon>
           </button>
           <mat-form-field class="w-8/12" appearance="outline">
-            <mat-label>Precio</mat-label>
+            <mat-label>{{ 'products.list.table.price' | translate }}</mat-label>
             <input class="text-center" matInput type="number" formControlName="price" maxlength="50" />
           </mat-form-field>
           <button mat-icon-button (click)="priceChange(-0.1)">
@@ -25,7 +25,7 @@
           </button>
         </div>
         <mat-form-field class="w-6/12" appearance="outline">
-          <mat-label>Formato</mat-label>
+          <mat-label>{{ 'products.list.table.format' | translate }}</mat-label>
           <mat-select formControlName="format" required>
             <mat-option>--</mat-option>
             <mat-option *ngFor="let format of formats" [value]="format">
@@ -38,7 +38,7 @@
       </div>
       <div class="flex flex-row">
         <mat-form-field class="w-full" appearance="outline">
-          <mat-label>Marca</mat-label>
+          <mat-label>{{ 'products.list.table.mark' | translate }}</mat-label>
           <input matInput type="text" formControlName="mark" required maxlength="50" />
           <small class="pl-2 color-grey" matSuffix>{{ markControl.value.length }}/50</small>
           <mat-error *ngIf="markControl.errors?.['required']">{{ 'forms.errors.required' | translate }}</mat-error>

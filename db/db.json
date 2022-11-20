@@ -1,15 +1,20 @@
 {
-  "category": [{
-    "id": 1,
-    "name": "Tornillos"
-  }],
-  "users": [{
-    "id": 1,
-    "email": "test@test.com",
-    "user": "Usuario123",
-    "password": "12345"
-  }],
-  "products": [{
+  "category": [
+    {
+      "id": 1,
+      "name": "Tornillos"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "user": "Usuario123",
+      "password": "12345"
+    }
+  ],
+  "products": [
+    {
       "id": 1,
       "category_id": "1",
       "name": "Tornillo de tuerca",
@@ -143,6 +148,15 @@
       "format": "black",
       "mark": "Lorem",
       "checked": false
+    },
+    {
+      "product": {
+        "name": "TEst",
+        "price": "0.50",
+        "format": "white",
+        "mark": "ter"
+      },
+      "id": 16
     }
   ]
 }
