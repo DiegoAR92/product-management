@@ -17,17 +17,22 @@ export class ProductsService {
     return this.http.get<Category[]>(`${this.baseUrl}/category`);
   }
 
-  getProductsByCategory(idCategory?:string, numberPage?: number, limit?: number): Observable<Product[]> | undefined {
+  getProductsByCategory(idCategory?:string, numberPage?: number, limit?: number, sort?: string, direction?: string): Observable<Product[]> | undefined {
     let params: HttpParams = new HttpParams();
+
     if(idCategory){
       params = params.append('category_id', idCategory);
     }
     
     if(numberPage){
-      params = params.append('_page', numberPage);
+      params = params.append('_page', numberPage+1);
     }
     if(limit){
       params = params.append('_limit', limit);
+    }
+
+    if(sort && direction){
+      params = params.append('_sort',sort).append('_order',direction);
     }
 
     return this.http.get<Product[]>(`${this.baseUrl}/products`, {params});

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../../../shared/services/products/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, Observable, startWith, switchMap, catchError, of, Subscription, merge } from 'rxjs';
+import { Subject, Observable, startWith, switchMap, catchError, of, Subscription, merge, tap } from 'rxjs';
 import { Category, Product } from '../../../interfaces/product.interface';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -23,10 +23,11 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
   #subscription = new Subscription();
 
   id!: string;
-  page: number = 1;
-  limit: number = 5;
   products: Product[] = [];
   displayedColumns: string[] = ['name','price','format','mark', 'actions'];
+
+  productsLength = 0;
+
 
   @ViewChild(MatPaginator, {static: false}) set pagSet(paginator: MatPaginator){
     if(paginator){
@@ -80,11 +81,23 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
       )
       .pipe(
         startWith({}),
-        switchMap(() => this.productSrv.getProductsByCategory(this.id, this.page, this.limit)!),
+        tap(() => {
+          this.productSrv.getProductsByCategory(this.id.toString())?.subscribe(
+            product => {
+              this.productsLength = product.length;
+            }
+          )
+        }),
+        switchMap(() => this.productSrv.getProductsByCategory(
+          this.id,
+          this.paginator?.pageIndex,
+          this.paginator?.pageSize,
+          this.sort?.active,
+          this.sort?.direction)!),
         catchError((err) => {
           console.error(err);
           return of();
-        })
+        }),
       ).subscribe(resp => {
         this.products = resp;
       }));
@@ -117,7 +130,8 @@ export class ListProductsComponent implements OnInit, AfterViewInit , OnDestroy 
     const dialogRef = this.dialog.open(ProductFormComponent, {
       width: '80vw',
       height: '50vh',
-      data: idProduct ? {id:idProduct} : undefined
+      data: idProduct ? {id:idProduct} : undefined,
+      hasBackdrop: false,
     });
     dialogRef.afterClosed().subscribe((result) => {
       if(result){

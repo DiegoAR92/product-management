@@ -2,19 +2,19 @@
   <div class="table-container">
     <table mat-table [dataSource]="products" class="mat-elevation-z0 min-w-full" matSort matSortActivate="name">
       <ng-container matColumnDef="name">
-        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef> {{ 'products.list.table.name' | translate }} </th>
+        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'products.list.table.name' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
       <ng-container matColumnDef="price">
-        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef> {{ 'products.list.table.price' | translate }} </th>
+        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'products.list.table.price' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.price}} </td>
       </ng-container>
       <ng-container matColumnDef="format">
-        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef> {{ 'products.list.table.format' | translate }} </th>
+        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'products.list.table.format' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.format}} </td>
       </ng-container>
       <ng-container matColumnDef="mark">
-        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef> {{ 'products.list.table.mark' | translate }} </th>
+        <th class="w-24 font-bold" mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'products.list.table.mark' | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.mark}} </td>
       </ng-container>
       <ng-container matColumnDef="actions">
@@ -32,6 +32,6 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-  <mat-paginator fixed [length]="products.length" [pageSizeOptions]="[5,10,25]" showFirstLastButtons></mat-paginator>
+  <mat-paginator fixed [length]="productsLength" [pageSizeOptions]="[5,10,25]" showFirstLastButtons></mat-paginator>
 </div>
 <app-footer (addProduct)="openProductFormDialog()"></app-footer>
