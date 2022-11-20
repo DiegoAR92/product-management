@@ -47,7 +47,7 @@
     </div>
     <div class="flex justify-between">
       <button mat-raised-button class="btn-grey" mat-dialog-close>{{ 'products.cancel' | translate }}</button>
-      <button mat-raised-button class="btn-green" (click)="save()">{{ id ? ('products.update' | translate) : ('products.save' | translate) }}</button>
+      <button mat-raised-button class="btn-green" (click)="save()" [disabled]="productForm?.invalid">{{ id ? ('products.update' | translate) : ('products.save' | translate) }}</button>
     </div>
   </form>
 </div>
