@@ -1,4 +1,4 @@
-<h1>Parte 1 - Cuestionario</h1>
+<h2>Parte 1 - Cuestionario</h2>
 <div>
   <h3>1. ¿Qué son los hooks del ciclo de vida en Angular? Explique algunos hooks
     del ciclo de vida</h3>
@@ -103,4 +103,10 @@
     <li>None: Angular no aplica ningún tipo de encapsulación a la vista, de este modo cualquier estilo especificado al
       componente se aplica de forma global y puede afectar a cualquier HTML de la aplicación.</li>
   </ul>
+</div>
+
+<h2>Parte 2 - Proyecto</h2>
+<div>
+  <p> El proyecto esta subido en este repositorio, basado en el framework de Angular. No he podido completar el 100% de lo pedido por tiempo.</p>
+  <p> Para ejecutar el proyecto es necesario lanzar el comando "npm start" y "npm run start:api". El primer comando lanzara el front y el segundo un servidor json para la comunicacion del backend y así poder gestionar la información.</p>
 </div>
